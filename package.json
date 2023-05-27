@@ -1,0 +1,25 @@
+{
+  "name": "telegram-music-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for searching and downloading music.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yarikkot04/telegram-music-bot.git"
+  },
+  "author": "Yaroslav Kotenko <yarikkotenkoim13@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yarikkot04/telegram-music-bot/issues"
+  },
+  "homepage": "https://github.com/yarikkot04/telegram-music-bot#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.61.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
