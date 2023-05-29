@@ -25,3 +25,10 @@ bot.onText(/\/search (.+)/, async (msg, [source, match]) => {
     updateUsrArr(userChat, all_usr_chat)
     console.log(all_usr_chat)
 })
+
+bot.on('callback_query', query => {
+    const id = query.message.chat.id
+    const msg_id = query.message.message_id
+    console.log(id)
+    console.log(msg_id)
+})
