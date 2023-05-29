@@ -19,7 +19,17 @@ function updateUsrArr(newUser,usr_arr) {
     }
 }
 
+function checkChatIndex(chatId, usrArr){
+    let index = 0
+    for(let i = 0; i < usrArr.length; i++) {
+        if(usrArr[i].id == chatId) {
+            index = i
+        }
+    }
+    return index
+}
 
 module.exports = {
     updateUsrArr,
+    checkChatIndex,
 }

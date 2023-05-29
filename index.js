@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api')
 const searchRequest = require('./search/search_request')
 const defineUserChat = require('./chat/define_usr_chat')
 const { sendResponseMenu, generateResponseMenu } = require('./chat/chat_menu/response_menu')
-const { updateUsrArr } = require('./chat/chat_monitoring')
+const { updateUsrArr, checkChatIndex } = require('./chat/chat_monitoring')
 const TOKEN = '5813243969:AAF59KtcD_vzrj15XIy8OwSenXSHVsFrCxg'
 
 const all_usr_chat = []
@@ -29,6 +29,6 @@ bot.onText(/\/search (.+)/, async (msg, [source, match]) => {
 bot.on('callback_query', query => {
     const id = query.message.chat.id
     const msg_id = query.message.message_id
-    console.log(id)
-    console.log(msg_id)
+    const index = checkChatIndex(id, all_usr_chat)
+    console.log('index', index)
 })
