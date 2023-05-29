@@ -3,6 +3,7 @@ const searchRequest = require('./search/search_request')
 const defineUserChat = require('./chat/define_usr_chat')
 const { sendResponseMenu, generateResponseMenu } = require('./chat/chat_menu/response_menu')
 const { updateUsrArr, checkChatIndex } = require('./chat/chat_monitoring')
+const { splitOne } = require('./helper/helper_functions')
 const TOKEN = '5813243969:AAF59KtcD_vzrj15XIy8OwSenXSHVsFrCxg'
 
 const all_usr_chat = []
@@ -31,4 +32,8 @@ bot.on('callback_query', query => {
     const msg_id = query.message.message_id
     const index = checkChatIndex(id, all_usr_chat)
     console.log('index', index)
+    const request = splitOne(query.message.text, ' ')[1]
+    console.log(request)
 })
+
+
