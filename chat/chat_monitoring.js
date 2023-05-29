@@ -13,7 +13,6 @@ function updateUsrArr(newUser,usr_arr) {
         i++
     }
 
-    console.log(status)
     if(!status) {
         usr_arr.push(newUser)
     }

@@ -1,5 +1,5 @@
 const { google } = require('googleapis')
-const yt_api_key = 'AIzaSyBG7vIKIi4n5PVsWZNpTBxC9f_eVG7lwng'
+const yt_api_key = 'AIzaSyDgw7QZ_Sd3WzifWTbaVrOISkqlijtFZZk'
 
 const youtube = google.youtube({
     version: 'v3',

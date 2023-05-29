@@ -12,7 +12,6 @@ function sendResponseMenu(chatId, title_arr, id_arr, requestMsg, tlg_bot) {
 
 function generateResponseMenu(start_pos, end_pos, title_arr, id_arr) {
     const pageArr = []
-    console.log('title',title_arr)
     for (let i = start_pos; i < end_pos; i++) {
         pageArr.push([{ text: `${i + 1}. ${title_arr[i].toString()}`, callback_data: `${id_arr[i]}` }])
     }
