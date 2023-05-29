@@ -1,5 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api')
-
+const searchRequest = require('./src/search_request')
 const TOKEN = '5813243969:AAF59KtcD_vzrj15XIy8OwSenXSHVsFrCxg'
 
 
@@ -13,7 +13,8 @@ const bot = new TelegramBot(TOKEN, {
     }
 }) 
 
-bot.on('message', (msg) => {
-    const chatId = msg.chat.id
-    bot.sendMessage(chatId, 'I am alive!')
+bot.onText(/\/search (.+)/, async (msg, [source, match]) => {
+    const id = msg.chat.id
+    const requestResult = await searchRequest(match)
+    console.log(requestResult)
 })
