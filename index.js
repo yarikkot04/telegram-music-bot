@@ -1,5 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api')
-const searchRequest = require('./src/search_request')
+const searchRequest = require('./search/search_request')
 const TOKEN = '5813243969:AAF59KtcD_vzrj15XIy8OwSenXSHVsFrCxg'
 
 
