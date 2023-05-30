@@ -5,6 +5,8 @@ const { sendResponseMenu, generateResponseMenu } = require('./chat/chat_menu/res
 const { updateUsrArr, checkChatIndex } = require('./chat/chat_monitoring')
 const { splitOne ,setFilePath } = require('./helper/helper_functions')
 const askFileFormat = require('./chat/chat_menu/format_menu')
+const downloadFile = require('./download/download_file')
+
 const TOKEN = '5813243969:AAF59KtcD_vzrj15XIy8OwSenXSHVsFrCxg'
 
 const all_usr_chat = []
@@ -51,14 +53,11 @@ bot.on('callback_query', async query => {
         } else if (splitOne(query.data, ' ')[0] == 'mp3') {
             const selectedFile = splitOne(query.data, ' ')[1]
             const filePath = ('./' + splitOne(query.message.text,': ')[1] + '.mp3').replaceAll('"','')
-            console.log(selectedFile)
-            console.log(filePath)
-
+            downloadFile(selectedFile, filePath, id, 'audioonly', bot);
         } else if (splitOne(query.data, ' ')[0] == 'mp4') {
             const selectedFile = splitOne(query.data, ' ')[1]
             const filePath = ('./' + splitOne(query.message.text,': ')[1] + '.mp4').replaceAll('"','')
-            console.log(selectedFile)
-            console.log(filePath)
+            downloadFile(selectedFile, filePath, id, 'videoandaudio',bot);
         } else {
             const respondList = query.message.reply_markup.inline_keyboard
             const selectedFileId = query.data
