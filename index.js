@@ -1,3 +1,4 @@
+require('dotenv').config()
 const TelegramBot = require('node-telegram-bot-api')
 const searchRequest = require('./search/search_request')
 const defineUserChat = require('./chat/define_usr_chat')
@@ -7,7 +8,7 @@ const { splitOne ,setFilePath } = require('./helper/helper_functions')
 const askFileFormat = require('./chat/chat_menu/format_menu')
 const downloadFile = require('./download/download_file')
 
-const TOKEN = '5813243969:AAF59KtcD_vzrj15XIy8OwSenXSHVsFrCxg'
+const TOKEN  = process.env.TOKEN
 
 const all_usr_chat = []
 
