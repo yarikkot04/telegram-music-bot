@@ -23,10 +23,14 @@ const bot = new TelegramBot(TOKEN, {
 
 bot.onText(/\/search (.+)/, async (msg, [source, match]) => {
     const id = msg.chat.id
-    const requestResult = await searchRequest(match)
-    const userChat = defineUserChat(id, requestResult, match)
-    sendResponseMenu(id, userChat.get_arr_title(), userChat.get_arr_id(), match, bot)
-    updateUsrArr(userChat, all_usr_chat)
+    try {
+        const requestResult = await searchRequest(match)
+        const userChat = defineUserChat(id, requestResult, match)
+        sendResponseMenu(id, userChat.get_arr_title(), userChat.get_arr_id(), match, bot)
+        updateUsrArr(userChat, all_usr_chat)
+    } catch (err) {
+        bot.sendMessage(id, 'Sorry, no matches found. Try to describe the name more precisely.')
+    }
 })
 
 bot.onText(/\/help/, (msg) => {
