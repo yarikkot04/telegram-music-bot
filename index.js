@@ -29,6 +29,29 @@ bot.onText(/\/search (.+)/, async (msg, [source, match]) => {
     updateUsrArr(userChat, all_usr_chat)
 })
 
+bot.onText(/\/help/, (msg) => {
+    const id = msg.chat.id
+    const infoAboutCommmand = `
+    Information about commands:
+    /clear_history - clears the search history
+    /history - displays search history
+    /top10|50 - returns the top 10|50 most popular songs by search
+    /search <name> - search by name
+    /help - information about bot commands
+    /author - information about the bot author
+    `
+    bot.sendMessage(id, infoAboutCommmand)
+})
+bot.onText(/\/author/, (msg) => {
+    const id = msg.chat.id
+    const infoAboutAuthor = `
+    Information:
+    gmail: <yarikkotenkoim13@gmail.com>
+    telegram: @everain_19
+    `
+    bot.sendMessage(id, infoAboutAuthor)
+})
+
 bot.on('callback_query', async query => {
     const id = query.message.chat.id
     const msg_id = query.message.message_id
