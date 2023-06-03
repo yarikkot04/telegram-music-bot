@@ -4,7 +4,8 @@
   "description": "Telegram bot for searching and downloading music.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test" : "jest"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "ytdl-core": "^4.11.4"
   },
   "devDependencies": {
+    "jest": "^29.5.0",
     "nodemon": "^2.0.22"
   }
 }

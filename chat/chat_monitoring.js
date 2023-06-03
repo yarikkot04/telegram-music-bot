@@ -19,7 +19,7 @@ function updateUsrArr(newUser,usr_arr) {
 }
 
 function checkChatIndex(chatId, usrArr){
-    let index = 0
+    let index = ''
     for(let i = 0; i < usrArr.length; i++) {
         if(usrArr[i].id == chatId) {
             index = i
