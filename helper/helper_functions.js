@@ -14,7 +14,17 @@ function setFilePath(menu, songCode) {
     }
 }
 
+function isExist(topList, song_id) {
+    for (let i = 0; i < topList.length; i++) {
+        if (topList[i].id == song_id) {
+            topList[i].search_req_count += 1
+            return true
+        }
+    }
+}
+
 module.exports = {
     splitOne,
     setFilePath,
+    isExist,
 }
